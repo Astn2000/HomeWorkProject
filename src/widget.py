@@ -1,4 +1,4 @@
-import masks
+import masks # type: ignore
 
 
 def mask_account_card(card_type: str, card_number: str) -> str:

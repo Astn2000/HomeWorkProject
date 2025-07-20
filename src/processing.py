@@ -1,4 +1,6 @@
 def filter_by_state(my_list: list, state: str = "EXECUTED") -> list:
+    """ Функция обрабатывает список словарей и возвращает список содержащий только те словари, у которых ключ
+        содержит переданное в функцию значение."""
     new_list = list()
     for list_ in my_list:
         status = list_.get("state")
@@ -8,6 +10,7 @@ def filter_by_state(my_list: list, state: str = "EXECUTED") -> list:
 
 
 print(
+
     filter_by_state(
         [
             {"id": 41428829, "state": "EXECUTED", "date": "2019-07-03T18:35:29.512364"},
@@ -21,6 +24,7 @@ print(
 
 
 def sort_by_date(list_dict: list, optional_parameter: bool =True) -> list:
+    """ Функция сортирующая словари по дате """
     sorted_list = sorted(list_dict, key=lambda date: date["date"], reverse=optional_parameter)
     return sorted_list
 

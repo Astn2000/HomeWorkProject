@@ -64,7 +64,7 @@ for description in transaction_descriptions(transactions):
 
 print()
 
-def card_number_generator(start: int = 1, stop: int = 9999999999999999) -> Generator[str, int]:
+def card_number_generator(start: int = 1, stop: int = 9999999999999999) -> Generator[str, None, None]:
     for x in range(stop):
         numbers = str(start).zfill(16)
         yield f"{numbers[0:4]} {numbers[4:8]} {numbers[8:12]} {numbers[12:]}"
@@ -74,5 +74,5 @@ def card_number_generator(start: int = 1, stop: int = 9999999999999999) -> Gener
 card_number = card_number_generator()
 
 
-for card_number in card_number_generator(1, 5):
+for card in card_number_generator(1, 5):
     print(card_number)

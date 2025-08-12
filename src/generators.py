@@ -49,7 +49,7 @@ def filter_by_currency(transactions: list, currency: str = "USD") -> Any | None:
     return ""
 
 
-print(filter_by_currency(transactions, "RUB"))
+print(filter_by_currency(transactions))
 
 
 def transaction_descriptions(transactions: list) -> Generator[Any, Any, None]:

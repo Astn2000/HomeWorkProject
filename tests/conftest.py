@@ -66,7 +66,7 @@ def test_sort_by_same_date():
 
 
 @pytest.fixture
-def test_transactions():
+def transactions():
     return [
     {
         "id": 939719570,
@@ -108,7 +108,7 @@ def test_transactions():
 
 
 @pytest.fixture
-def test_filter_by_currency_usd():
+def filter_by_currency_usd():
     return [
     {
         "id": 939719570,
@@ -131,7 +131,7 @@ def test_filter_by_currency_usd():
 
 
 @pytest.fixture
-def test_filter_by_currency_rub():
+def filter_by_currency_rub():
     return [
     {
         "id": 142264268,
@@ -152,3 +152,14 @@ def test_filter_by_currency_rub():
         "to": "Счет 75651667383060281111",
     },
 ]
+
+
+@pytest.fixture
+def no_transactions():
+    void_list = []
+    return void_list
+
+@pytest.fixture
+def descriptions():
+    return ['Перевод организации', 'Перевод со счета на счет', 'Перевод со счета на счет', 'Перевод с карты на карту']
+

@@ -5,10 +5,10 @@ def get_mask_card_number(card_number: Union[int, str]) -> str:
     """Функция маскирующая часть номера карты"""
     card_number = str(card_number)
     if not card_number.isnumeric():
-        raise ValueError('Неверный тип данных, укажите номер карты')
+        raise ValueError("Неверный тип данных, укажите номер карты")
 
     if len(card_number) != 16:
-        raise ValueError('Неверное количество символов')
+        raise ValueError("Неверное количество символов")
 
     return f"{card_number[:4]} {card_number[4:6]}** **** {card_number[-4:]}"
 
@@ -17,14 +17,14 @@ def get_mask_account(account_number: Union[int, str]) -> str:
     """Функция маскирующая номер счета"""
     account_number = str(account_number)
     if not account_number.isnumeric():
-        raise ValueError('Неверный тип данных, укажите номер счета')
+        raise ValueError("Неверный тип данных, укажите номер счета")
 
     if len(account_number) != 20:
-        raise ValueError('Неверное количество символов')
+        raise ValueError("Неверное количество символов")
 
     return f"**{account_number[-4:]}"
 
 
 if __name__ == "__main__":
-    print(get_mask_card_number('1234567812345678'))
-    print(get_mask_account('73654108430135874305'))
+    print(get_mask_card_number("1234567812345678"))
+    print(get_mask_account("73654108430135874305"))

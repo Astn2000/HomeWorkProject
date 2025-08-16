@@ -49,6 +49,6 @@ pip install -r requirements.txt
 ## Тестирование проекта
 
 Написаны тесты покрывающие большинство тест кейсов , возникающих при работе проекта
-*Процент покрытия тестами - 100%*
+*Процент покрытия тестами - 99%*
 [Ссылка на HTML. отчет](http://localhost:63342/HomeWorkProject/htmlcov/index.html?_ijt=1ojah9c1dd78696amttj6tih1f&_ij_reload=RELOAD_ON_SAVE)
 

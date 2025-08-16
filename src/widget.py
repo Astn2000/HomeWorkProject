@@ -19,7 +19,7 @@ def get_date(string_1: str) -> str:
     return f"{data_corrected[2]}.{data_corrected[1]}.{data_corrected[0]}"
 
 
-if __name__ == "__main__":
-    print(mask_account_card("Счет", "73654108430135874305"))
-    print(mask_account_card("Visa Gold", "1234567812345678"))
-    print(get_date("2024-03-11T02:26:18.671407"))
+# if __name__ == "__main__":
+#     print(mask_account_card("Счет", "73654108430135874305"))
+#     print(mask_account_card("Visa Gold", "1234567812345678"))
+#     print(get_date("2024-03-11T02:26:18.671407"))

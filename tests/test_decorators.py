@@ -1,4 +1,5 @@
 import os
+from typing import Optional
 
 import pytest
 
@@ -31,3 +32,17 @@ def test_log_in_terminal(capsys: pytest.CaptureFixture) -> None:
     function(1, 2)
     captured = capsys.readouterr()
     assert captured.out == "function ok\n"
+
+
+def test_log_exception(capsys: pytest.CaptureFixture) -> None:
+    @log()
+    def function(x: Optional[int]) -> int:
+        if not x:
+            raise TypeError("Отсутствие данных")
+
+        return x
+
+    with pytest.raises(Exception):
+        function(None)
+    captured = capsys.readouterr()
+    assert captured.out == "function error: TypeError: Отсутствие данных. Inputs: (None,), {}\n"

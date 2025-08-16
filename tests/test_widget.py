@@ -13,7 +13,7 @@ from src.widget import get_date, mask_account_card
     ],
 )
 def test_mask_account_card(account_or_card_number: str, type_number: str, expected: str) -> None:
-    assert mask_account_card(account_or_card_number , type_number) == expected
+    assert mask_account_card(account_or_card_number, type_number) == expected
 
 
 def test_mask_account_card_type() -> None:
@@ -28,7 +28,7 @@ def test_get_date_success(string_1: str, expected: str) -> None:
     assert get_date(string_1) == expected
 
 
-def test_get_date_value_error() ->None :
+def test_get_date_value_error() -> None:
     with pytest.raises(ValueError):
         get_date("2024-03-1102:26:18.671407")
 

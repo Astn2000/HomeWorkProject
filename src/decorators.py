@@ -7,6 +7,7 @@ BASEDIR = Path(__file__).resolve().parent.parent
 
 
 def log(filename: Optional[str] = None) -> Callable:
+    """ Декоратор создающий логи результатов работы с функциями если параметр filename указан"""
     def decorator(func: Callable) -> Callable:
         @wraps(func)
         def wrapper(*args: int, **kwargs: int) -> Any:
@@ -37,20 +38,20 @@ def log(filename: Optional[str] = None) -> Callable:
     return decorator
 
 
-# if __name__ == "__main__":
-#
-#     @log(filename="mylog.txt")
-#     def function(x: int, y: int) -> int:
-#         """Функция сложения чисел и логирования результата"""
-#         return x + y
-#
-#     print(function(1, 2))
-#
-#     @log()
-#     def function_1(x: int, y: int) -> int:
-#         """Функция сложения чисел и логирования результата"""
-#         return x + y
-#
-#     print(function_1(1, 2))
-#
-#     # print(help(function))
+if __name__ == "__main__":
+
+    @log(filename="mylog.txt")
+    def function(x: int, y: int) -> int:
+        """Функция сложения чисел """
+        return x + y
+
+    print(function(1, 2))
+
+    @log()
+    def function_1(x: int, y: int) -> int:
+        """Функция сложения чисел """
+        return x + y
+
+    print(function_1(1, 2))
+
+    # print(help(function))
